@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode></React.StrictMode>
-);
+export { Button } from "./components/Button";
+export { Input } from "./components/Input";
+export { Label } from "./components/Label";
