@@ -18,7 +18,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonStyled variant={variant} disabled={disabled} {...props}>
+    <ButtonStyled $variant={variant} disabled={disabled} {...props}>
       {startIcon} {label} {endIcon}
     </ButtonStyled>
   );

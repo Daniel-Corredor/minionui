@@ -10,7 +10,7 @@ export interface CustomTheme extends DefaultTheme {
 }
 
 export interface ButtonProps {
-  variant?: ButtonVariant;
+  $variant?: ButtonVariant;
   theme: Theme;
 
   // Otras propiedades...
@@ -27,10 +27,12 @@ const buttonStyles = css<ButtonProps>`
   justify-content: center;
   gap: ${gap.sm};
   transition: background-color 0.3s ease-in;
-  ${({ variant, theme }) =>
-    getButtonStyles(variant || "primary", theme)}; // Otros estilos...
+  ${({ $variant, theme }) =>
+    getButtonStyles($variant || "primary", theme)}; // Otros estilos...
 `;
 
-export const ButtonStyled = styled.button<ButtonProps>`
+export const ButtonStyled = styled.button.attrs<ButtonProps>((props) => ({
+  $variant: props.$variant,
+}))<ButtonProps>`
   ${buttonStyles}
 `;
