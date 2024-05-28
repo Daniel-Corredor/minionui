@@ -11,13 +11,14 @@ export interface CustomTheme extends DefaultTheme {
 
 export interface ButtonProps {
   $variant?: ButtonVariant;
+  $fullWidth?: boolean;
   theme: Theme;
 
   // Otras propiedades...
 }
 
 const buttonStyles = css<ButtonProps>`
-  font-family: ${body.fontStyle4.bold};
+  font-family: ${body.fontFamily};
   padding: ${gap.md} ${gap.lg};
   border-radius: ${radius["4xl"]};
   font-weight: ${body.fontStyle4.bold.fontWeight};
@@ -27,8 +28,8 @@ const buttonStyles = css<ButtonProps>`
   justify-content: center;
   gap: ${gap.sm};
   transition: background-color 0.3s ease-in;
-  ${({ $variant, theme }) =>
-    getButtonStyles($variant || "primary", theme)}; // Otros estilos...
+  ${({ $variant, theme }) => getButtonStyles($variant || "primary", theme)};
+  ${({ $fullWidth }) => $fullWidth && `flex-grow: 1;`};
 `;
 
 export const ButtonStyled = styled.button.attrs<ButtonProps>((props) => ({
