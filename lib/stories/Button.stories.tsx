@@ -47,6 +47,7 @@ export const Primary: Story = {
     label: "Button",
     variant: "primary",
     disabled: false,
+    fullWidth: false,
   },
 };
 
@@ -55,5 +56,6 @@ export const Secondary: Story = {
     label: "Button",
     variant: "secondary",
     disabled: false,
+    fullWidth: false,
   },
 };
